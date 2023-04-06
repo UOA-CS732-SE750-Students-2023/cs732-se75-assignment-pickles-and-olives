@@ -7,10 +7,13 @@ import { useBookListStore } from "../store/useBookListStore";
 const showForm = ref(false);
 const store = useBookListStore();
 const selectedSortingOption = ref("default");
+store.addDummyData();
 
 const sortBooks = () => {
       store.sortBooks(selectedSortingOption.value);
     };
+
+    
 
 </script>
 

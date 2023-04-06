@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { dummyBooks } from './dummyData';
 
 // this is where we set up the store using Pinia - which is an option of state management tool. We can define our objects structure and also create any methods for manipulating the stored data. Here, I have set the the state to be stored as in local storage, which allows the app to maintain your booklist even when you refresh the page or re-open the app.
 
@@ -44,6 +45,14 @@ export const useBookListStore = defineStore('bookList', {
              };
              this.bookList.push(book);
           
+        },
+        addDummyData() {
+          const storedData = localStorage.getItem('book-list-state');
+          if (!storedData) {
+            dummyBooks.forEach(book => {
+              this.bookList.push(book);
+            });
+          }
         },
         deleteBook(bookId) {
             this.bookList = this.bookList.filter((object) => {

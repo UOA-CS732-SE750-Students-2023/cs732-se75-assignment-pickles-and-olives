@@ -3,7 +3,7 @@
 #app {
   font-family: "Raleway", sans-serif;
   max-width: 1280px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   padding: 2rem;
   background-color: rgb(254 202 202);
