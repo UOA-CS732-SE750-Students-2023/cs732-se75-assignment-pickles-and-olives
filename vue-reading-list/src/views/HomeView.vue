@@ -7,14 +7,14 @@ import { useBookListStore } from "../store/useBookListStore";
 const showForm = ref(false);
 const store = useBookListStore();
 const selectedSortingOption = ref("default");
+
+// I have set up some example data which is populated into the app when the store key value does not exist in the browser's local storage, feel free to comment this line out if you wish to start your list from scratch!
+
 store.addDummyData();
 
 const sortBooks = () => {
-      store.sortBooks(selectedSortingOption.value);
-    };
-
-    
-
+  store.sortBooks(selectedSortingOption.value);
+};
 </script>
 
 <template>
@@ -24,7 +24,11 @@ const sortBooks = () => {
     </button>
     <div class="sort-container">
       <label for="sort-select">Sort by:</label>
-      <select id="sort-select" v-model="selectedSortingOption" @change="sortBooks">
+      <select
+        id="sort-select"
+        v-model="selectedSortingOption"
+        @change="sortBooks"
+      >
         <option value="title">Title</option>
         <option value="author">Author</option>
         <option value="priority">Priority</option>

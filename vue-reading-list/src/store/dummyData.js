@@ -1,6 +1,6 @@
 export const dummyBooks = [{
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
+    title: "The Secret History",
+    author: "Donna Tartt",
     priority: "Must read!",
     id: 0,
     read: true,
@@ -15,8 +15,8 @@ export const dummyBooks = [{
     dateRead: null,
   },
   {
-    title: "1984",
-    author: "George Orwell",
+    title: "Great Expectations",
+    author: "Charles Dickens",
     priority: "Must read!",
     id: 2,
     read: true,
@@ -31,8 +31,8 @@ export const dummyBooks = [{
     dateRead: null,
   },
   {
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
+    title: "The Marriage Plot",
+    author: "Jeffrey Eugenides",
     priority: "Want to read",
     id: 4,
     read: false,

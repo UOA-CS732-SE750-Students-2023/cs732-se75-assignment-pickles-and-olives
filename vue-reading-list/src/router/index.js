@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+// this is where you can define your routes within the single page application
+// the example here has onlt two paths, however it gives you a good idea of the ease with which you can expand
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

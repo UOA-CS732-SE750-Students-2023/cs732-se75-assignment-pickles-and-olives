@@ -51,8 +51,8 @@ export default {
         <p v-if="book.read">Marked as read on: </p>
         <p v-if="book.read">{{ book.dateRead }}</p>
       </div>
-      <div>
-      <button class="deleteButton" @click="deleteBook">Delete</button>
+      <div class="bookCardButtons">
+      <button @click="deleteBook" tool><img src="../assets/remove.png" alt="delete"></button>
       <button :class="readButton" @click="toggleRead">
         {{ book.read ? "Read!" : "Read it?" }}
       </button>
@@ -72,20 +72,25 @@ export default {
   flex-direction: column;
 }
 
+.bookCardButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
   h2 {
     font-weight: 600;
   }
 
   button {
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 2px 6px;
     color: white;
   }
 
-  .deleteButton {
-    background-color: rgb(239 68 68);
-    color: white;
+img {
+    max-height: 28px;
   }
   
   .readDate {
@@ -104,11 +109,11 @@ export default {
 }
 
   .high {
-    background-color: rgb(239 68 68);
+    background-color: #ef4444;
   }
 
   .medium {
-    background-color: rgb(249 115 22);
+    background-color: #f97316;
   }
 
   .low {

@@ -39,4 +39,14 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 align-items: stretch;
 }
 
+@media  (max-width: 1000px) {
+  .bookListContainer {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    flex-direction: column;
+  }
+  
+}
+
 </style>
