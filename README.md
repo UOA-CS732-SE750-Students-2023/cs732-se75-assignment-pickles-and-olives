@@ -9,7 +9,7 @@ A copy of the impressive scaffolding generated with [create-vue](https://github.
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
 
 [Vue Devtools](https://devtools.vuejs.org/guide/installation.html)
 (fun for dynamic browser inspection but not required!)
