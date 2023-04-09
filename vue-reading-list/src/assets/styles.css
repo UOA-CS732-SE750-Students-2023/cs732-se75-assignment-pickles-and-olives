@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tailwind is installed and is providing some automatically 
+applied styling rule from their default theme, however the 
+Tailwind CSS method of styling elements has not been used throughout the app */

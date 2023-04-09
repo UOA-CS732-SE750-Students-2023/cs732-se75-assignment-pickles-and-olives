@@ -1,6 +1,9 @@
 <script>
 import { ref } from "vue";
 
+// I extracted the form component so that the app could be extended in the future to allow for editing of books in the list
+// Idea for future development: reuse form for editing books by passing in a different submit action and button text!
+
 export default {
   props: {
     title: {

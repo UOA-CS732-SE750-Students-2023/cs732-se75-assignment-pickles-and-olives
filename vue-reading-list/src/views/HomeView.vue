@@ -4,14 +4,15 @@ import BookList from "../components/BookList.vue";
 import NewBookForm from "../components/NewBookForm.vue";
 import { useBookListStore } from "../store/useBookListStore";
 
+// set initial values using refs and initial the store instance
 const showForm = ref(false);
 const store = useBookListStore();
 const selectedSortingOption = ref("default");
 
 // I have set up some example data which is populated into the app when the store key value does not exist in the browser's local storage, feel free to comment this line out if you wish to start your list from scratch!
-
 store.addDummyData();
 
+// triggers the stores sorting method with the current selected option
 const sortBooks = () => {
   store.sortBooks(selectedSortingOption.value);
 };

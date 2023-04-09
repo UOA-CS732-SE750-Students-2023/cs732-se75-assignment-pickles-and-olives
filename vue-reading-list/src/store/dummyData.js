@@ -1,4 +1,5 @@
-export const dummyBooks = [{
+export const dummyBooks = [
+  {
     title: "The Secret History",
     author: "Donna Tartt",
     priority: "Must read!",
@@ -37,4 +38,5 @@ export const dummyBooks = [{
     id: 4,
     read: false,
     dateRead: null,
-  }];
+  },
+];

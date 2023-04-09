@@ -1,6 +1,9 @@
 <script>
 import { useBookListStore } from "../store/useBookListStore";
 import BookForm from "./BookForm.vue";
+
+// this component uses the book form and passes the function for adding books, as well as communicating with the store
+
 export default {
   components: {
     BookForm,

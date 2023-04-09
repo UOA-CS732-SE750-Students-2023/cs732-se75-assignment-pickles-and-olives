@@ -2,6 +2,7 @@
 import HeaderComponent from "./components/HeaderComponent.vue";
 </script>
 
+<!-- here we are setting up the core app structure, with the imported header component as a constant, and the RouterView component to dynamically display the body -->
 <template>
   <header>
     <HeaderComponent />

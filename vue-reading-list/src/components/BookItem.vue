@@ -7,6 +7,7 @@ export default {
     },
   },
   computed: {
+    // this method dynamically returns a class to be applied depending on the current value of the variable
     priorityColor() {
       switch (this.book.priority) {
         case "Must read!":
@@ -25,7 +26,7 @@ export default {
       } else {
         return "unread";
       }
-    }
+    },
   },
   methods: {
     deleteBook() {
@@ -34,34 +35,36 @@ export default {
     toggleRead() {
       this.$emit("toggleRead", this.book);
     },
+    // these methods are using Vue's emit method to pass the instance specific event up to parent components
   },
 };
 </script>
 
 <template>
-    <div class="book-card" v-if="book">
-        <div :class="priorityColor">
-            <span>{{ this.book.priority }}</span>
-        </div>
-      <div class="book-info">
-        <h2>{{ book.title }}</h2>
-        <p>By {{ book.author }}</p>
-      </div>
-      <div class="readDate">
-        <p v-if="book.read">Marked as read on: </p>
-        <p v-if="book.read">{{ book.dateRead }}</p>
-      </div>
-      <div class="bookCardButtons">
-      <button @click="deleteBook" tool><img src="../assets/remove.png" alt="delete"></button>
+  <div class="book-card" v-if="book">
+    <div :class="priorityColor">
+      <span>{{ book.priority }}</span>
+    </div>
+    <div class="book-info">
+      <h2>{{ book.title }}</h2>
+      <p>By {{ book.author }}</p>
+    </div>
+    <div class="read-date">
+      <p v-if="book.read">Marked as read on:</p>
+      <p v-if="book.read">{{ book.dateRead }}</p>
+    </div>
+    <div class="book-card-buttons">
+      <button @click="deleteBook" tool>
+        <img src="../assets/remove.png" alt="delete" />
+      </button>
       <button :class="readButton" @click="toggleRead">
         {{ book.read ? "Read!" : "Read it?" }}
       </button>
     </div>
-    </div>
-  </template>
-  
-  
-  <style scoped>
+  </div>
+</template>
+
+<style scoped>
 .book-card {
   text-align: center;
   margin: 10px;
@@ -72,62 +75,59 @@ export default {
   flex-direction: column;
 }
 
-.bookCardButtons {
+.book-card-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-  h2 {
-    font-weight: 600;
-  }
+h2 {
+  font-weight: 600;
+}
 
-  button {
-    border-radius: 4px;
-    padding: 2px 6px;
-    color: white;
-  }
+button {
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: white;
+}
 
 img {
-    max-height: 28px;
-  }
-  
-  .readDate {
-    font-size: small;
-    font-style: italic;
-  }
+  max-height: 28px;
+}
 
-  .book-info {
-    margin-bottom: 10px;
-    padding: 20px;
-  }
+.read-date {
+  font-size: small;
+  font-style: italic;
+}
+
+.book-info {
+  margin-bottom: 10px;
+  padding: 20px;
+}
 
 .priority {
   color: white;
   border-radius: 6px 6px 0px 0px;
 }
 
-  .high {
-    background-color: #ef4444;
-  }
+.high {
+  background-color: #ef4444;
+}
 
-  .medium {
-    background-color: #f97316;
-  }
+.medium {
+  background-color: #f97316;
+}
 
-  .low {
-    background-color: #3dcac3;
-  }
+.low {
+  background-color: #3dcac3;
+}
 
-  .read {
-    text-decoration: line-through;
-    background-color: rgb(13 148 136);;
-  }
+.read {
+  text-decoration: line-through;
+  background-color: rgb(13 148 136);
+}
 
-  .unread {
-    background-color: #38b2ac;
-  }
-
-
-  </style>
+.unread {
+  background-color: #38b2ac;
+}
+</style>
