@@ -44,11 +44,13 @@ export const useBookListStore = defineStore("bookList", {
   },
   actions: {
     addBook(title, author, priority) {
+      const lastBook = this.bookList[this.bookList.length - 1];
+      const id = lastBook ? lastBook.id + 1 : 1;
       const book = {
         title,
         author,
         priority,
-        id: this.id++,
+        id,
         read: false,
         dateRead: null,
       };
